@@ -83,3 +83,12 @@ fig.update_layout(
 )
 
 st.plotly_chart(fig, use_container_width=True)
+#p fazer deploy do dash
+#pip install kaleido
+import plotly.io as pio
+
+grafico_html = pio.to_html(
+    fig,
+    full_html=False,        
+    include_plotlyjs='cdn'  
+)
