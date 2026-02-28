@@ -1,11 +1,9 @@
-import os
-from dotenv import load_dotenv
+
 from sqlalchemy import create_engine
 import streamlit as st
 import pandas as pd
 import plotly.express as px
 
-@st.cache_resource
 @st.cache_resource
 def conectar():
     engine = create_engine(
@@ -83,10 +81,10 @@ fig.update_layout(
 st.plotly_chart(fig, use_container_width=True)
 #p fazer deploy do dash
 #pip install kaleido
-import plotly.io as pio
+# import plotly.io as pio
 
-grafico_html = pio.to_html(
-    fig,
-    full_html=False,        
-    include_plotlyjs='cdn'  
-)
+# grafico_html = pio.to_html(
+#     fig,
+#     full_html=False,        
+#     include_plotlyjs='cdn'  
+# )
