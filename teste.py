@@ -6,16 +6,14 @@ import pandas as pd
 import plotly.express as px
 
 @st.cache_resource
+@st.cache_resource
 def conectar():
-    load_dotenv(override=True)
-
     engine = create_engine(
-        f"postgresql+psycopg2://{os.getenv('DB_USER')}:{os.getenv('DB_PASS')}"
-        f"@{os.getenv('DB_HOST_NAME')}:{os.getenv('DB_PORT')}/{os.getenv('DB_NAME')}",
+        f"postgresql+psycopg2://{st.secrets['DB_USER']}:{st.secrets['DB_PASS']}"
+        f"@{st.secrets['DB_HOST_NAME']}:{st.secrets['DB_PORT']}/{st.secrets['DB_NAME']}",
         pool_pre_ping=True
     )
     return engine
-
 
 st.set_page_config(
     page_title="",
